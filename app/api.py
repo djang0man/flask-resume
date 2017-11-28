@@ -6,12 +6,10 @@ from jsonschema import validate, ValidationError
 from datetime import date, datetime
 
 from . import models
-from . import decorators
 from . import app
 from .database import session
 
 @app.route("/api/<user>", methods=["GET"])
-@decorators.accept("application/json")
 def profile_get(user):
     """ Get resume details"""
 
