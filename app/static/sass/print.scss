@@ -1,0 +1,29 @@
+/* Welcome to Compass. Use this file to define print styles.
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/print.css" media="print" rel="stylesheet" type="text/css" /> */
+
+@media print {
+    figure {
+		display: none;
+	}
+	em {
+		display: block;
+	}
+	a {
+		color: blue;
+	}
+	#skills {
+		ul {
+			list-style: none;
+			padding-left: 0;
+			li {
+				display: inline-block;
+				&:not(:last-child) {
+					&:after {
+						content: ', ';
+					}
+				}
+			}
+		}
+	}
+}

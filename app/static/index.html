@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Global Site Tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-107421682-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments)};
+      gtag('js', new Date());
+      gtag('config', 'UA-107421682-1');
+    </script>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Stuart Kershaw | Experienced Front End Developer | Seattle, WA</title>
+    <meta name="description" content="Stuart Kershaw, Experienced Front End Developer, Seattle, WA">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <script src="//use.typekit.net/bal1iov.js"></script>
+    <script src="//use.fontawesome.com/113a205871.js"></script>
+    <script>
+        try {
+            Typekit.load();
+        } catch (e) {}
+    </script>
+    <link rel="stylesheet" href="/static/stylesheets/icons.css">
+    <link rel="stylesheet" media="screen" href="/static/stylesheets/screen.css">
+    <link rel="stylesheet" href="/static/stylesheets/resume.css">
+    <link rel="stylesheet" href="/static/stylesheets/print.css">
+    <!-- <link rel="stylesheet" href="//basehold.it/24"> -->
+    <link rel="author" href="https://plus.google.com/+StuartKershaw">
+</head>
+<body>
+    <nav class="main-nav" style="opacity: 0;">
+        <ul>
+            <li class="tab" data-content="home"><a href="/">Home</a></li>
+            <li class="tab" data-content="skills"><a href="/#skills">Skills</a></li>
+            <li class="tab" data-content="experience"><a href="/#experience">Experience</a></li>
+            <li class="tab" data-content="education"><a href="/#education">Education</a></li>
+            <li class="tab" data-content="projects"><a href="/#projects">Projects</a></li>
+            <li class="tab" data-content="awards"><a href="/#awards">Awards</a></li>
+        </ul>
+    </nav>
+    <div class="icon-menu toggle-menu" style="opacity: 0;"></div>
+    <main>
+      <script id="resume-template" type="text/x-handlebars-template">
+        <section>
+          <header id="name">
+            <h1 id="author">{{details.name}}</h1>
+          </header>
+          <figure>
+            <img src="/static/images/me.png" alt="Stuart outside smiling in a green hat and blue shirt">
+          </figure>
+          <div id="contact">
+            <div id="address">
+              <p>{{details.about}}</p>
+              <p>{{details.location}}</p>
+              <p>
+                <a class="social" href="{{details.stack_overflow}}" target="_blank">
+                  <i class="fa fa-stack-overflow" aria-hidden="true"></i>
+                  <em class="alt">{{details.stack_overflow}}</em>
+                </a>
+                <a class="social" href="{{details.github}}" target="_blank">
+                  <i class="fa fa-github" aria-hidden="true"></i>
+                  <em class="alt">{{details.github}}</em>
+                </a>
+                <a class="social" href="{{details.linkedin}}" target="_blank">
+                  <i class="fa fa-linkedin" aria-hidden="true"></i>
+                  <em class="alt">{{details.linkedin}}</em>
+                </a>
+                <a class="social" href="mailto:{{details.email}}" target="_blank">
+                  <i class="fa fa-envelope" aria-hidden="true"></i>
+                  <em class="alt">{{details.email}}</em>
+                </a>
+              </p>
+            </div>
+          </div>
+          <article id="skills" class="tab-content">
+            <header>
+              <h2>technical skills</h2>
+            </header>
+            {{#if skills}}
+            <ul>
+              {{#each skills}}
+              <li>{{name}}</li>
+              {{/each}}
+            </ul>
+            {{/if}}
+          </article>
+          <article id="experience" class="tab-content">
+            <header>
+              <h2>professional experience</h2>
+            </header>
+            {{#each_by_id companies}}
+            <section>
+              <h3>
+                <a href="{{url}}" target="_blank">{{name}}</a>
+              </h3>
+              {{#each positions}}
+              <section>
+                <h4>{{title}}</h4>
+                <em>{{start_date}} - {{#if end_date}}{{end_date}}{{else if is_current}}Currrent{{/if}}</em>
+                {{{description}}}
+              </section>
+              {{/each}}
+            </section>
+            {{/each_by_id}}
+          </article>
+          <article id="education" class="tab-content">
+            <header>
+              <h2>education</h2>
+            </header>
+            {{#each_by_id schools}}
+            <section>
+              <h3>
+                <a href="{{url}}" target="_blank">{{name}}</a>
+              </h3>
+              {{#each programs}}
+              <section>
+                {{#if name}}
+                <h4>
+                  <a class="norm full" href="{{url}}" target="_blank">
+                    {{name}}
+                  </a>
+                </h4>
+                {{/if}}
+                <em>{{start_date}} - {{#if end_date}}{{end_date}}{{else if is_current}}Currrent{{/if}}</em>
+                {{#if courses}}
+                <ul>
+                  {{#each courses}}
+                  <li>
+                    <a class="norm bottom" href="{{url}}" target="_blank">
+                      {{name}}
+                    </a>
+                  </li>
+                  {{/each}}
+                </ul>
+                {{/if}}
+              </section>
+              {{/each}}
+            </section>
+            {{/each_by_id}}
+          </article>
+          <article id="projects" class="tab-content">
+            <header>
+              <h2>projects</h2>
+            </header>
+            <section>
+              {{#if projects}}
+              <ul>
+                {{#each projects}}
+                <li>
+                  <a class="norm bottom" href="{{url}}" target="_blank">
+                    {{name}}
+                  </a>
+                </li>
+                {{/each}}
+              </ul>
+              {{/if}}
+            </section>
+          </article>
+          <article id="awards" class="tab-content">
+            <header>
+              <h2>awards</h2>
+            </header>
+            {{#each awards}}
+            <h3>{{name}}</h3>
+            {{#each awards}}
+            <section>
+              <h4>{{name}}</h4>
+              {{#if entries}}
+              <ul>
+                {{#each entries}}
+                <li>
+                  <a class="norm bottom" href="{{url}}" target="_blank">
+                    {{name}}
+                  </a>
+                </li>
+                {{/each}}
+              </ul>
+              {{/if}}
+            </section>
+            {{/each}}
+            {{/each}}
+          </article>
+        </section>
+      </script>
+    </main>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
+    <script>
+    	Handlebars.registerHelper('each_by_id', function(context,options){
+		    var output = '';
+		    var contextSorted = context.concat()
+		        .sort( function(a,b) { return a.id - b.id } );
+		    for(var i=0, j=contextSorted.length; i<j; i++) {
+		        output += options.fn(contextSorted[i]);
+		    }
+		    return output;
+		});
+    </script>
+    <script src="/static/scripts/resume.js"></script>
+    <script src="/static/scripts/resumeView.js"></script>
+    <script>
+      Resume.fetch();
+    </script>
+</body>
+</html>

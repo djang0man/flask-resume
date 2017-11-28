@@ -1,0 +1,7 @@
+Flask
+Jinja2
+dotenv
+psycopg2
+gunicorn
+jsonschema
+SQLAlchemy

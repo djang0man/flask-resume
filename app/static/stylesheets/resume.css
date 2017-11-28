@@ -1,0 +1,107 @@
+.main-nav {
+  background: white;
+  display: inline-block;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: all .400s ease-out;
+  -moz-transition: all .400s ease-out;
+  -o-transition: all .400s ease-out;
+  transition: all .400s ease-out;
+  margin: 0 auto;
+  padding: 0 0 .75em;
+  position: absolute;
+  z-index: 1;
+  right: 0;
+  top: 0;
+  width: 100%;
+}
+
+.main-nav a {
+  font-size: 1.25em;
+  line-height: 1.5em;
+  padding: .125em .5em;
+}
+
+.main-nav.show {
+  visibility: visible;
+  opacity: 1;
+}
+
+@media screen and (min-width: 1024px) {
+  .main-nav {
+    background: transparent;
+    position: relative;
+    visibility: visible;
+    opacity: 1;
+    left: calc(50% - 208px);
+    right: auto;
+    width: auto;
+    padding-bottom: 0;
+  }
+  .main-nav a {
+    font-size: 1em;
+    line-height: 1em;
+    padding: 0 .25em;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .toggle-menu {
+    display: none;
+  }
+}
+
+.icon-menu, .icon-cross {
+  font-size: 32px;
+  position: fixed;
+  top: .25em;
+  right: .313em;
+  background: white;
+  z-index: 2;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 1024px) {
+  .sticky {
+    padding-top: 36px;
+  }
+}
+
+.sticky .main-nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+}
+
+@media screen and (min-width: 1024px) {
+  .sticky .main-nav {
+    left: calc(100% - 440px);
+    right: auto;
+  }
+}
+
+.main-nav ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.main-nav li {
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+}
+
+@media screen and (min-width: 1024px) {
+    .main-nav ul { display: inline-block; }
+    .main-nav li { float: none; width: auto; }
+}
+
+figure { margin-left: auto; margin-right: auto; position: relative; width: 240px; /*overflow: hidden;*/ }
+/*figure img, figure img:hover { display: none; transform: none; transition: none; }*/
+
+.rotation { bottom: 12px; left: 0; list-style: none; padding: 0; position: absolute; }
+.rotation li { display: inline-block; margin: 4px; }
+.rotation a { border-radius: 50%; width: 24px; height: 24px; display: block; line-height: 24px; font-size: .75em; }
+.rotation .active a { background-color:	white; }
+
+.current a { color: gray; text-decoration: underline; }
