@@ -4,7 +4,7 @@ Flask Resume
 
 The [API](http://stuartkershaw.com/api/stuartdkershaw) is formatted using SQLAlchemy ORM via [`resume/models.py`](https://github.com/stuartkershaw/flask-resume/blob/master/resume/models.py), and returns JSON via [`resume/api.py`](https://github.com/stuartkershaw/flask-resume/blob/master/resume/api.py).
 
-The frontend leverages the API for dynamic UI templating. Jinja2 ([`resume/templates`](https://github.com/stuartkershaw/flask-resume/tree/master/resume/templates)) and Handlebars ([`resume/static`](https://github.com/stuartkershaw/flask-resume/blob/master/resume/static/index.html)) examples are included.
+The frontend leverages API JSON for templating. Jinja2 ([`resume/templates`](https://github.com/stuartkershaw/flask-resume/tree/master/resume/templates)) and Handlebars ([`resume/static`](https://github.com/stuartkershaw/flask-resume/blob/master/resume/static/index.html)) examples are included.
 
 ## Configure
 
