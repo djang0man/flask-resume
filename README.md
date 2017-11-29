@@ -11,7 +11,7 @@ The frontend leverages API data for a dynamic UI. Jinja2 ([`resume/templates`](h
 Configure the following environment variable with your DB settings:
 
 ```
-DATABASE_URL=postgres://db_user:db_pw@db_address:5432/db_name"
+DATABASE_URL=postgres://db_user:db_pw@db_address:5432/db_name
 ```
 
 On first launch, uncomment the placeholder data in `resume/models.py` to populate the database. This data is intended as a starting point and should be removed / updated as needed. Once populated, re-comment and enjoy.
