@@ -1,7 +1,7 @@
 # Created by https://www.gitignore.io/api/vim,sass,macos,python,virtualenv
 
-db
 config.py
+db
 
 ### macOS ###
 *.DS_Store
