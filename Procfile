@@ -1,2 +1,2 @@
-web: gunicorn my_flask_resume:app --log-file=-
+web: gunicorn app:app --log-file=-
 myworker: python run.py
