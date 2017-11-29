@@ -5,7 +5,7 @@ from flask import Flask, render_template
 
 app = Flask(__name__)
 
-config_path = os.environ.get("CONFIG_PATH", "app.config.DevelopmentConfig")
+config_path = os.environ.get("CONFIG_PATH", "resume.config.DevelopmentConfig")
 app.config.from_object(config_path)
 
 from . import api

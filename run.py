@@ -1,5 +1,5 @@
 import os
-from app import app
+from resume import app
 
 def run():
     port = int(os.environ.get('PORT', 8080))

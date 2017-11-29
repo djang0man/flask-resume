@@ -1,2 +1,2 @@
-web: gunicorn app:app --log-file=-
+web: gunicorn resume:app --log-file=-
 myworker: python run.py
