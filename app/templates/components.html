@@ -1,0 +1,202 @@
+{% extends "base.html" %}
+
+{% block head %}
+  <head>
+    <!-- Global Site Tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-107421682-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments)};
+      gtag('js', new Date());
+      gtag('config', 'UA-107421682-1');
+    </script>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Stuart Kershaw | Experienced Front End Developer | Seattle, WA</title>
+    <meta name="description" content="Stuart Kershaw, Experienced Front End Developer, Seattle, WA">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <script src="//use.typekit.net/bal1iov.js"></script>
+    <script src="//use.fontawesome.com/113a205871.js"></script>
+    <script>
+      try {
+          Typekit.load();
+      } catch (e) {}
+    </script>
+    <link rel="stylesheet" href="/static/stylesheets/icons.css">
+    <link rel="stylesheet" media="screen" href="/static/stylesheets/screen.css">
+    <link rel="stylesheet" href="/static/stylesheets/resume.css">
+    <link rel="stylesheet" href="/static/stylesheets/print.css">
+    <!-- <link rel="stylesheet" href="//basehold.it/24"> -->
+    <link rel="author" href="https://plus.google.com/+StuartKershaw">
+  </head>
+{% endblock %}
+{% block nav %}
+    <nav class="main-nav" style="opacity: 0;">
+      <ul>
+          <li class="tab" data-content="home"><a href="/">Home</a></li>
+          <li class="tab" data-content="skills"><a href="/#skills">Skills</a></li>
+          <li class="tab" data-content="experience"><a href="/#experience">Experience</a></li>
+          <li class="tab" data-content="education"><a href="/#education">Education</a></li>
+          <li class="tab" data-content="projects"><a href="/#projects">Projects</a></li>
+          <li class="tab" data-content="awards"><a href="/#awards">Awards</a></li>
+      </ul>
+    </nav>
+    <div class="icon-menu toggle-menu" style="opacity: 0;"></div>
+{% endblock %}
+{% block details %}
+          <header id="name">
+            <h1 id="author">{{resume.details.name}}</h1>
+          </header>
+          <figure>
+            <img src="/static/images/me.png" alt="Stuart outside smiling in a green hat and blue shirt">
+          </figure>
+          <div id="contact">
+            <div id="address">
+              <p>{{resume.details.about}}</p>
+              <p>{{resume.details.location}}</p>
+              <p>
+                <a class="social" href="{{resume.details.stack_overflow}}" target="_blank">
+                  <i class="fa fa-stack-overflow" aria-hidden="true"></i>
+                  <em class="alt">{{resume.details.stack_overflow}}</em>
+                </a>
+                <a class="social" href="{{resume.details.github}}" target="_blank">
+                  <i class="fa fa-github" aria-hidden="true"></i>
+                  <em class="alt">{{resume.details.github}}</em>
+                </a>
+                <a class="social" href="{{resume.details.linkedin}}" target="_blank">
+                  <i class="fa fa-linkedin" aria-hidden="true"></i>
+                  <em class="alt">{{resume.details.linkedin}}</em>
+                </a>
+                <a class="social" href="mailto:{{resume.details.email}}" target="_blank">
+                  <i class="fa fa-envelope" aria-hidden="true"></i>
+                  <em class="alt">{{resume.details.email}}</em>
+                </a>
+              </p>
+            </div>
+          </div>      
+{% endblock %}
+{% block skills %}
+          <article id="skills" class="tab-content">
+            <header>
+              <h2>technical skills</h2>
+            </header>
+            {% if resume.skills %}
+            <ul>
+              {% for skill in resume.skills %}
+              <li>{{skill.name}}</li>
+              {% endfor %}
+            </ul>
+            {% endif %}
+          </article>
+{% endblock %}
+{% block experience %}
+          <article id="experience" class="tab-content">
+            <header>
+              <h2>professional experience</h2>
+            </header>
+            {% for company in resume.companies %}
+            <section>
+              <h3>
+                <a href="{{company.url}}" target="_blank">{{company.name}}</a>
+              </h3>
+              {% for position in company.positions %}
+              <section>
+                <h4>{{position.title}}</h4>
+                <em>{{position.start_date}} - {% if position.end_date %}{{position.end_date}}{% elif position.is_current %}current{% endif %}</em>
+                {{position.description|safe}}
+              </section>
+              {% endfor %}
+            </section>
+            {% endfor %}
+          </article>
+{% endblock %}
+{% block education %}
+          <article id="education" class="tab-content">
+            <header>
+              <h2>education</h2>
+            </header>
+            {% for school in resume.schools %}
+            <section>
+              <h3>
+                <a href="{{school.url}}" target="_blank">{{school.name}}</a>
+              </h3>
+              {% for program in school.programs %}
+              <section>
+                {% if program.name %}
+                <h4>
+                  <a class="norm full" href="{{program.url}}" target="_blank">
+                    {{program.name}}
+                  </a>
+                </h4>
+                {% endif %}
+                <em>{{program.start_date}} - {% if program.end_date %}{{program.end_date}}{% elif program.is_current %}current{% endif %}</em>
+                {% if program.courses %}
+                <ul>
+                  {% for course in program.courses %}
+                  <li>
+                    <a class="norm bottom" href="{{course.url}}" target="_blank">
+                      {{course.name}}
+                    </a>
+                  </li>
+                  {% endfor %}
+                </ul>
+                {% endif %}
+              </section>
+              {% endfor %}
+            </section>
+            {% endfor %}
+          </article>
+{% endblock %}
+{% block projects %}
+          <article id="projects" class="tab-content">
+            <header>
+              <h2>projects</h2>
+            </header>
+            <section>
+              {% if resume.projects %}
+              <ul>
+                {% for project in resume.projects %}
+                <li>
+                  <a class="norm bottom" href="{{project.url}}" target="_blank">
+                    {{project.name}}
+                  </a>
+                </li>
+                {% endfor %}
+              </ul>
+              {% endif %}
+            </section>
+          </article>
+{% endblock %}
+{% block awards %}
+          <article id="awards" class="tab-content">
+            <header>
+              <h2>awards</h2>
+            </header>
+            {% for award in resume.awards %}
+              <h3>{{award.name}}</h3>
+              {% for award in award.awards %}
+                <section>
+                  <h4>{{award.name}}</h4>
+                  {% if award.entries %}
+                  <ul>
+                    {% for entry in award.entries %}
+                    <li>
+                      <a class="norm bottom" href="{{entry.url}}" target="_blank">
+                        {{entry.name}}
+                      </a>
+                    </li>
+                    {% endfor %}
+                  </ul>
+                  {% endif %}
+                </section>
+              {% endfor %}
+            {% endfor %}
+          </article>
+{% endblock %}
+{% block scripts %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="/static/scripts/view.js"></script>
+    <script>
+      resumeView.initPage();
+    </script>
+{% endblock %}
