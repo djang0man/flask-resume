@@ -8,13 +8,13 @@ The frontend leverages JSON to build a dynamic UI. Examples of Jinja2 ([`resume/
 
 ## Configure
 
-* Configure the following environment variables with your settings:
+Configure the following environment variables with your settings:
 
 ```
 DATABASE_URL=postgres:// db_user : db_pw @ db_address : 5432 / db_name"
 ```
 
-* On first launch, uncomment the example data in `resume/models.py`. Comment it back out after the database is populated. This is intended to provide a starting point and should then be removed or updated!
+On first launch, uncomment the example data in `resume/models.py`. Comment it back out after the database is populated. This is intended to provide a starting point and should then be removed or updated!
 
 ## Start
 
