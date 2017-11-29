@@ -1,4 +1,3 @@
-import os.path
 import json
 
 from flask import request, Response

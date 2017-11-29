@@ -1,9 +1,6 @@
-import os.path
-
 from sqlalchemy import Table, Column, Integer, String, Sequence, ForeignKey, Text, Date, Boolean
 from sqlalchemy.orm import relationship
 
-from . import app
 from .database import Base, engine, session
 
 skills_relationship = Table('relationship_skills', Base.metadata,
