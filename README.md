@@ -14,7 +14,7 @@ Configure the following environment variable with your own DB settings:
 DATABASE_URL=postgres://db_user:db_pw@db_address:5432/db_name
 ```
 
-Populate the database before first launch! Simply uncomment the example data in `resume/models.py` and then run. The starter data demonstrates functionality and can be updated / removed as needed. Once the database is populated with content appearing on page load, re-comment the data script and enjoy.
+To populate the database on first launch, uncomment the example data in `resume/models.py` before starting the server. The example data is intended to demonstrate functionality and should be altered as needed. Once the database is populated and content appears on page load, re-comment the data script and enjoy.
 
 ## Start
 
