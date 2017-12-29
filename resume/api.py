@@ -69,8 +69,8 @@ def profile_get(user):
                     position = {
                         'id': position.id,
                         'title': position.title,
-                        'start_date': position.start_date.isoformat(),
-                        'end_date': position.end_date.isoformat() if position.end_date else None,
+                        'start_date': position.start_date,
+                        'end_date': position.end_date if position.end_date else None,
                         'is_current': position.is_current,
                         'description': position.description
                     }
@@ -98,8 +98,8 @@ def profile_get(user):
                         'type': program.type,
                         'name': program.name,
                         'url': program.url,
-                        'start_date': program.start_date.isoformat(),
-                        'end_date': program.end_date.isoformat() if program.end_date else None,
+                        'start_date': program.start_date,
+                        'end_date': program.end_date if program.end_date else None,
                         'is_current': program.is_current,
                         'courses': get_courses(courses_at, program.id)
                     }
