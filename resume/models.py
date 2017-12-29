@@ -1,4 +1,4 @@
-from sqlalchemy import Table, Column, Integer, String, Sequence, ForeignKey, Text, Date, Boolean
+from sqlalchemy import Table, Column, Integer, String, Sequence, ForeignKey, Text, Boolean
 from sqlalchemy.orm import relationship
 
 from .database import Base, engine, session
@@ -90,8 +90,8 @@ class Position(Base):
     
     id = Column(Integer, primary_key=True)
     title = Column(String(128))
-    start_date = Column(Date())
-    end_date = Column(Date(), nullable="True")
+    start_date = Column(String(64))
+    end_date = Column(String(64), nullable="True")
     is_current = Column(Boolean(), default=False)
     description = Column(Text(), nullable="True")
     
@@ -105,8 +105,8 @@ class Program(Base):
     type = Column(String(64), nullable="True")
     name = Column(String(128))
     url = Column(String(256))
-    start_date = Column(Date())
-    end_date = Column(Date(), nullable="True")
+    start_date = Column(String(64))
+    end_date = Column(String(64), nullable="True")
     is_current = Column(Boolean(), default=False)
     
     school_id = Column(Integer, ForeignKey('school.id'))
@@ -150,12 +150,10 @@ class Project(Base):
     
     profile_id = Column(Integer, ForeignKey('profile.id'))
 
-'''
-
 Base.metadata.create_all(engine)
 
 stuart = Profile(name="Stuart Kershaw", stack_overflow="https://stackoverflow.com/users/2332112/stuart-kershaw", 
-						github="https://github.com/stuartkershaw", linkedin="https://www.linkedin.com/in/stuartkershaw", 
+	    github="https://github.com/stuartkershaw", linkedin="https://www.linkedin.com/in/stuartkershaw", 
             email="stuartdkershaw@gmail.com", username="stuartdkershaw", location="Seattle, WA", 
             about="JavaScript and Python")
 
@@ -196,7 +194,7 @@ companies = [
 ]
 
 schools = [
-		School(name="Code Fellows", url="https://www.codefellows.org/"),
+    School(name="Code Fellows", url="https://www.codefellows.org/"),
     School(name="University of Washington", url="http://www.washington.edu/"),
     School(name="University of Iowa", url="https://uiowa.edu/")
 ]
@@ -207,25 +205,25 @@ institutions = [
 ]
 
 positions = [
-    Position(title="Supervisor of Front End Development", start_date="2012-04-01", end_date="2017-07-01", company_id="1", 
+    Position(title="Supervisor of Front End Development", start_date="Apr 2012", end_date="Jul 2017", company_id="1", 
         description="<ul>"\
-        		"<li>Led a team of developers in delivering award-winning websites to top hoteliers around the world.</li> "\
+            "<li>Led a team of developers in delivering award-winning websites to top hoteliers around the world.</li> "\
             "<li>Built responsive web applications with HTML, CSS, and JavaScript.</li> "\
             "<li>Reviewed business documents and design compositions for project timeline feasibility.</li> "\
             "<li>Collaborated across teams to create RESTful JSON and XML APIs for new features.</li> "\
             "<li>Optimized UI components for responsive build efficiency, load performance, cross-platform rendering, and accessibility coverage.</li> "\
           "</ul>"),
-    Position(title="Front End Developer", start_date="2009-10-01", end_date="2012-04-01", company_id="1", 
+    Position(title="Front End Developer", start_date="Oct 2009", end_date="Apr 2012", company_id="1", 
         description="<ul>"\
-        		"<li>Succeeded under tight deadlines with multiple daily deliverables.</li> "\
+            "<li>Succeeded under tight deadlines with multiple daily deliverables.</li> "\
             "<li>Developed custom booking solutions with conversion-optimized user interfaces.</li> "\
             "<li>Built editable email templates for Salesforce Marketing Cloud.</li> "\
             "<li>Standardized library markup for content sharing with social network APIs.</li> "\
             "<li>Designed social media marketing applications to promote bookings from 3rd party platforms.</li> "\
           "</ul>"),
-    Position(title="Web Developer and Designer", start_date="2007-04-01", end_date="2009-02-01", company_id="2", 
+    Position(title="Web Developer and Designer", start_date="Apr 2007", end_date="Feb 2009", company_id="2", 
         description="<ul>"\
-        		"<li>Built fully custom hand-coded websites for high-traffic university departments.</li> "\
+            "<li>Built fully custom hand-coded websites for high-traffic university departments.</li> "\
             "<li>Iterated with stakeholders to refine graphic and user interface designs.</li> "\
             "<li>Produced valid XHTML for W3C Web Content Accessibility Guidelines (WCAG) and Section 508 compliance.</li> "\
             "<li>Led website CMS training sessions with university staff.</li>"\
@@ -235,13 +233,13 @@ positions = [
 programs = [
     Program(name="Advanced Software Development", school_id="1", 
             url="https://www.codefellows.org/courses/code-401/advanced-software-development-in-full-stack-javascript/", 
-            start_date="2017-08-01", end_date="2017-11-01"),
+            start_date="Aug 2017", end_date="Nov 2017"),
     Program(name="IT Foundations", type="Certificate", school_id="2", 
             url="https://www.pce.uw.edu/certificates/it-foundations", 
-            start_date="2017-06-01", is_current="True"),
+            start_date="Jun 2017", end_date="Dec 2017"),
     Program(name="English", type="BA", school_id="3", 
             url="https://english.uiowa.edu/", 
-            start_date="2005-01-01", end_date="2008-01-01")
+            start_date="2005", end_date="2008")
 ]
 
 courses = [
@@ -332,4 +330,3 @@ session.add(awards[5])
 
 session.commit()
 
-'''
