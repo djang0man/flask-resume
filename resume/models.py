@@ -150,7 +150,7 @@ class Project(Base):
     
     profile_id = Column(Integer, ForeignKey('profile.id'))
 
-'''
+
 
 Base.metadata.create_all(engine)
 
@@ -210,7 +210,7 @@ institutions = [
 positions = [
     Position(title="Software Engineer", start_date="Jan 2018", is_current="true", company_id="1", 
         description=""),
-    Position(title="Supervisor of Front End Development", start_date="Apr 2012", end_date="Jul 2017", company_id="1", 
+    Position(title="Supervisor of Front End Development", start_date="Apr 2012", end_date="Jul 2017", company_id="2", 
         description="<ul>"\
             "<li>Led a team of developers in delivering award-winning websites to top hoteliers around the world.</li> "\
             "<li>Built responsive web applications with HTML, CSS, and JavaScript.</li> "\
@@ -218,7 +218,7 @@ positions = [
             "<li>Collaborated across teams to create RESTful JSON and XML APIs for new features.</li> "\
             "<li>Optimized UI components for responsive build efficiency, load performance, cross-platform rendering, and accessibility coverage.</li> "\
           "</ul>"),
-    Position(title="Front End Developer", start_date="Oct 2009", end_date="Apr 2012", company_id="1", 
+    Position(title="Front End Developer", start_date="Oct 2009", end_date="Apr 2012", company_id="2", 
         description="<ul>"\
             "<li>Succeeded under tight deadlines with multiple daily deliverables.</li> "\
             "<li>Developed custom booking solutions with conversion-optimized user interfaces.</li> "\
@@ -226,7 +226,7 @@ positions = [
             "<li>Standardized library markup for content sharing with social network APIs.</li> "\
             "<li>Designed social media marketing applications to promote bookings from 3rd party platforms.</li> "\
           "</ul>"),
-    Position(title="Web Developer and Designer", start_date="Apr 2007", end_date="Feb 2009", company_id="2", 
+    Position(title="Web Developer and Designer", start_date="Apr 2007", end_date="Feb 2009", company_id="3", 
         description="<ul>"\
             "<li>Built fully custom hand-coded websites for high-traffic university departments.</li> "\
             "<li>Iterated with stakeholders to refine graphic and user interface designs.</li> "\
@@ -335,4 +335,4 @@ session.add(awards[5])
 
 session.commit()
 
-'''
+
