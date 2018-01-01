@@ -208,7 +208,7 @@ institutions = [
 ]
 
 positions = [
-    Position(title="Software Engineer", start_date="Jan 2018", is_current="true" company_id="1", 
+    Position(title="Software Engineer", start_date="Jan 2018", is_current="true", company_id="1", 
         description=""),
     Position(title="Supervisor of Front End Development", start_date="Apr 2012", end_date="Jul 2017", company_id="1", 
         description="<ul>"\
