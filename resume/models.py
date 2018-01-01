@@ -150,8 +150,6 @@ class Project(Base):
     
     profile_id = Column(Integer, ForeignKey('profile.id'))
 
-'''
-
 Base.metadata.create_all(engine)
 
 stuart = Profile(name="Stuart Kershaw", stack_overflow="https://stackoverflow.com/users/2332112/stuart-kershaw", 
@@ -191,6 +189,7 @@ skills = [
 ]
 
 companies = [
+    Company(name="Knock Rentals", url="https://knockrentals.com/"),
     Company(name="Sabre Hospitality Solutions", url="http://sabrehospitality.com/"),
     Company(name="University of Iowa", url="https://uiowa.edu/")
 ]
@@ -207,6 +206,8 @@ institutions = [
 ]
 
 positions = [
+    Position(title="Software Engineer", start_date="Jan 2018", company_id="1", 
+        description=""),
     Position(title="Supervisor of Front End Development", start_date="Apr 2012", end_date="Jul 2017", company_id="1", 
         description="<ul>"\
             "<li>Led a team of developers in delivering award-winning websites to top hoteliers around the world.</li> "\
@@ -331,5 +332,3 @@ session.add(awards[4])
 session.add(awards[5])
 
 session.commit()
-
-'''
