@@ -150,8 +150,6 @@ class Project(Base):
     
     profile_id = Column(Integer, ForeignKey('profile.id'))
 
-'''
-
 Base.metadata.create_all(engine)
 
 stuart = Profile(name="Stuart Kershaw", stack_overflow="https://stackoverflow.com/users/2332112/stuart-kershaw", 
@@ -331,4 +329,3 @@ session.add(awards[5])
 
 session.commit()
 
-'''
