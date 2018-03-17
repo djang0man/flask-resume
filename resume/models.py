@@ -150,8 +150,6 @@ class Project(Base):
     
     profile_id = Column(Integer, ForeignKey('profile.id'))
 
-'''
-
 Base.metadata.create_all(engine)
 
 stuart = Profile(name="Stuart Kershaw", stack_overflow="https://stackoverflow.com/users/2332112/stuart-kershaw", 
@@ -164,7 +162,7 @@ skills = [
     Skill(name="CSS"),
     Skill(name="JavaScript"),
     Skill(name="React"),
-    Skill(name="Angular"),
+    Skill(name="AngularJS"),
     Skill(name="Redux"),
     Skill(name="Node.js"),
     Skill(name="Jest"),
@@ -330,6 +328,4 @@ session.add(awards[4])
 session.add(awards[5])
 
 session.commit()
-
-'''
 
