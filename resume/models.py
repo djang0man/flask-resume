@@ -150,7 +150,7 @@ class Project(Base):
     
     profile_id = Column(Integer, ForeignKey('profile.id'))
 
-'''
+
 
 Base.metadata.create_all(engine)
 
@@ -179,6 +179,8 @@ skills = [
     Skill(name="Mongoose"),
     Skill(name="HTTP"),
     Skill(name="REST"),
+    Skill(name="XML")
+    Skill(name="XSLT")
     Skill(name="Bash"),
     Skill(name="Git"),
     Skill(name="Github"),
@@ -206,26 +208,26 @@ positions = [
         description=""),
     Position(title="Supervisor of Front End Development", start_date="Apr 2012", end_date="Jul 2017", company_id="2", 
         description="<ul>"\
-            "<li>Led a team of developers in delivering award-winning websites to top hoteliers around the world.</li> "\
+            "<li>Led a team of developers in delivering award-winning websites to top hoteliers.</li> "\
             "<li>Built responsive web applications with HTML, CSS, and JavaScript.</li> "\
             "<li>Reviewed business documents and design compositions for project timeline feasibility.</li> "\
             "<li>Collaborated across teams to create RESTful JSON and XML APIs for new features.</li> "\
-            "<li>Optimized UI components for responsive build efficiency, load performance, cross-platform rendering, and accessibility coverage.</li> "\
+            "<li>Optimized responsive UI components for build efficiency, load performance, cross-platform rendering, and accessibility coverage.<li> "\
           "</ul>"),
     Position(title="Front End Developer", start_date="Oct 2009", end_date="Apr 2012", company_id="2", 
         description="<ul>"\
             "<li>Succeeded under tight deadlines with multiple daily deliverables.</li> "\
-            "<li>Designed cross-browser booking solutions with conversion-optimized user interfaces.</li> "\
-            "<li>Built editable email templates for Salesforce Marketing Cloud.</li> "\
-            "<li>Standardized library markup for content sharing with social network APIs.</li> "\
-            "<li>Developed custom Facebook booking applications to promote reservations through social media.</li> "\
+            "<li>Developed conversion-optimized, cross-browser booking solutions.</li> "\
+            "<li>Built editable email templates for hotel and airline marketing campaigns.</li> "\
+            "<li>Standardized library markup for content sharing across social network APIs.</li> "\
+            "<li>Designed custom Facebook applications to enable direct bookings through social media.</li> "\
           "</ul>"),
     Position(title="Web Developer and Designer", start_date="Apr 2007", end_date="Feb 2009", company_id="3", 
         description="<ul>"\
             "<li>Built fully custom hand-coded websites for high-traffic university departments.</li> "\
             "<li>Iterated with stakeholders to refine graphic and user interface designs.</li> "\
-            "<li>Produced valid XHTML for W3C Web Content Accessibility Guidelines (WCAG) and Section 508 compliance.</li> "\
             "<li>Led website CMS training sessions with university staff.</li>"\
+            "<li>Produced valid XHTML for W3C Web Content Accessibility Guidelines (WCAG) and Section 508 compliance.</li> "\
           "</ul>")
 ]
 
@@ -329,5 +331,5 @@ session.add(awards[5])
 
 session.commit()
 
-'''
+
 
