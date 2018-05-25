@@ -150,7 +150,7 @@ class Project(Base):
     
     profile_id = Column(Integer, ForeignKey('profile.id'))
 
-'''
+
 
 Base.metadata.create_all(engine)
 
@@ -179,8 +179,8 @@ skills = [
     Skill(name="Mongoose"),
     Skill(name="HTTP"),
     Skill(name="REST"),
-    Skill(name="XML")
-    Skill(name="XSLT")
+    Skill(name="XML"),
+    Skill(name="XSLT"),
     Skill(name="Bash"),
     Skill(name="Git"),
     Skill(name="Github"),
@@ -331,4 +331,4 @@ session.add(awards[5])
 
 session.commit()
 
-'''
+
