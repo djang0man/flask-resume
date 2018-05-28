@@ -150,7 +150,7 @@ class Project(Base):
     
     profile_id = Column(Integer, ForeignKey('profile.id'))
 
-'''
+
 
 Base.metadata.create_all(engine)
 
@@ -217,17 +217,17 @@ positions = [
     Position(title="Front End Developer", start_date="Oct 2009", end_date="Apr 2012", company_id="2", 
         description="<ul>"\
             "<li>Succeeded under tight deadlines with multiple daily deliverables.</li> "\
-            "<li>Developed conversion-optimized, cross-browser booking solutions.</li> "\
+            "<li>Developed cross-browser, conversion-optimized booking solutions.</li> "\
             "<li>Built editable email templates for hotel and airline marketing campaigns.</li> "\
             "<li>Standardized library markup for content sharing across social network APIs.</li> "\
-            "<li>Designed custom Facebook applications to enable direct bookings through social media.</li> "\
+            "<li>Designed custom booking applications for direct reservations through Facebook.</li> "\
           "</ul>"),
     Position(title="Web Developer and Designer", start_date="Apr 2007", end_date="Feb 2009", company_id="3", 
         description="<ul>"\
             "<li>Built fully custom hand-coded websites for high-traffic university departments.</li> "\
             "<li>Iterated with stakeholders to refine graphic and user interface designs.</li> "\
-            "<li>Led website CMS training sessions with university staff.</li>"\
-            "<li>Produced valid XHTML for W3C Web Content Accessibility Guidelines (WCAG) and Section 508 compliance.</li> "\
+            "<li>Led website management training sessions with university staff.</li>"\
+            "<li>Produced valid XHTML to meet W3C Web Content Accessibility Guidelines (WCAG) and Section 508 compliance.</li> "\
           "</ul>")
 ]
 
@@ -331,4 +331,4 @@ session.add(awards[5])
 
 session.commit()
 
-'''
+
