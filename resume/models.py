@@ -150,7 +150,7 @@ class Project(Base):
     
     profile_id = Column(Integer, ForeignKey('profile.id'))
 
-'''
+
 
 Base.metadata.create_all(engine)
 
@@ -212,7 +212,7 @@ positions = [
             "<li>Built responsive web applications with HTML, CSS, and JavaScript.</li> "\
             "<li>Reviewed business documents and design compositions for project timeline feasibility.</li> "\
             "<li>Collaborated across teams to create RESTful JSON and XML APIs for new features.</li> "\
-            "<li>Optimized responsive UI components for build efficiency, load performance, cross-platform rendering, and accessibility coverage.<li> "\
+            "<li>Optimized responsive UI components for build efficiency, load performance, cross-platform rendering, and accessibility coverage.</li> "\
           "</ul>"),
     Position(title="Front End Developer", start_date="Oct 2009", end_date="Apr 2012", company_id="2", 
         description="<ul>"\
@@ -331,4 +331,4 @@ session.add(awards[5])
 
 session.commit()
 
-'''
+
