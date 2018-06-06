@@ -150,7 +150,7 @@ class Project(Base):
     
     profile_id = Column(Integer, ForeignKey('profile.id'))
 
-'''
+
 
 Base.metadata.create_all(engine)
 
@@ -218,7 +218,7 @@ positions = [
             "<li>Developed cross-browser, conversion-optimized booking solutions.</li> "\
             "<li>Built editable email templates for hotel and airline marketing campaigns.</li> "\
             "<li>Standardized library markup for content sharing across social network APIs.</li> "\
-            "<li>Designed Facebook booking applications for direct reservations through social media.</li> "\
+            "<li>Designed custom booking applications for direct reservations through Facebook.</li> "\
           "</ul>"),
     Position(title="Web Developer and Designer", start_date="Apr 2007", end_date="Feb 2009", company_id="3", 
         description="<ul>"\
@@ -329,4 +329,4 @@ session.add(awards[5])
 
 session.commit()
 
-'''
+
