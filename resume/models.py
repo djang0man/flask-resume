@@ -150,7 +150,7 @@ class Project(Base):
     
     profile_id = Column(Integer, ForeignKey('profile.id'))
 
-'''
+
 
 Base.metadata.create_all(engine)
 
@@ -236,6 +236,9 @@ programs = [
     Program(name="IT Foundations", type="Certificate", school_id="2", 
             url="https://www.pce.uw.edu/certificates/it-foundations", 
             start_date="Jun 2017", end_date="Dec 2017"),
+    Program(name="Python Programming", school_id="2",
+            url="https://www.pce.uw.edu/certificates/python-programming",
+            start_date="Jan 2018", is_current="true"),
     Program(name="English", type="BA", school_id="3", 
             url="https://english.uiowa.edu/", 
             start_date="2005", end_date="2008")
@@ -252,10 +255,12 @@ courses = [
            url="https://www.pce.uw.edu/courses/foundations-of-programming-python"),
     Course(name="Database Management", program_id="2", 
            url="https://www.pce.uw.edu/courses/foundations-of-database-management"),
-    Course(name="Learn Programming in Python", 
-           url="https://www.thinkful.com/courses/learn-python-online/"),
-    Course(name="Mobile Sites", 
-           url="https://www.google.com/partners/#i_profile;idtf=114181277994537316243;")
+    Course(name="Programming in Python", program_id="3", 
+           url="https://www.pce.uw.edu/courses/programming-in-python"),
+    Course(name="Advanced Programming in Python", program_id="3", 
+           url="https://www.pce.uw.edu/courses/advanced-programming-in-python"),
+    Course(name="Internet Programming with Python", program_id="3", 
+           url="https://www.pce.uw.edu/courses/internet-programming-with-python")
 ]
 
 projects = [
@@ -294,6 +299,10 @@ entries= [
     Entry(name="Chanalai Hotels and Resorts", 
           url="http://interactivemediaawards.com/winners/certificate.asp?param=606235&cat=1"),
     Entry(name="Palau Pacific Resort", 
+          url="http://www.webaward.org/winner/33385/sabre-hospitality-solutions-wins-2017-webaward-for-prince-resorts-hawaii.html"),
+    Entry(name="Elegant Hotels", 
+          url="http://www.webaward.org/winner/33384/sabre-hospitality-solutions-wins-2017-webaward-for-elegant-hotels.html"),
+    Entry(name="Palau Pacific Resort", 
           url="http://www.webaward.org/winner/32731/sabre-hospitality-solutions-wins-2016-webaward-for-palau-pacific-resort.html"),
     Entry(name="Chanalai Hotels and Resorts", 
           url="http://www.webaward.org/winner/32730/sabre-hospitality-solutions-wins-2016-webaward-for-chanalai-hotels-and-resorts.html")
@@ -316,9 +325,9 @@ session.bulk_save_objects(courses)
 awards[0].entries = [entries[0], entries[1], entries[2], entries[3]]
 awards[1].entries = [entries[4], entries[5]]
 awards[2].entries = [entries[6]]
-awards[3].entries = [entries[0], entries[2]]
-awards[4].entries = [entries[3]]
-awards[5].entries = [entries[7], entries[8]]
+awards[3].entries = [entries[7]]
+awards[4].entries = [entries[8]]
+awards[5].entries = [entries[9], entries[10]]
 
 session.add(awards[0])
 session.add(awards[1])
@@ -329,4 +338,4 @@ session.add(awards[5])
 
 session.commit()
 
-'''
+
