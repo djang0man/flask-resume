@@ -150,7 +150,7 @@ class Project(Base):
     
     profile_id = Column(Integer, ForeignKey('profile.id'))
 
-
+'''
 
 Base.metadata.create_all(engine)
 
@@ -340,4 +340,4 @@ session.add(awards[5])
 
 session.commit()
 
-
+'''
