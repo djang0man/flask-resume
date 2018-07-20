@@ -150,7 +150,7 @@ class Project(Base):
     
     profile_id = Column(Integer, ForeignKey('profile.id'))
 
-'''
+
 
 Base.metadata.create_all(engine)
 
@@ -164,24 +164,26 @@ skills = [
     Skill(name="CSS"),
     Skill(name="JavaScript"),
     Skill(name="React"),
-    Skill(name="AngularJS"),
     Skill(name="Redux"),
+    Skill(name="AngularJS"),
     Skill(name="Node.js"),
-    Skill(name="Jest"),
-    Skill(name="webpack"),
-    Skill(name="Babel"),
+    Skill(name="Express"),
+    Skill(name="Webpack"),
     Skill(name="Python"),
     Skill(name="Flask"),
     Skill(name="PostgresSQL"),
+    Skill(name="SQLAlchemy"),
     Skill(name="MongoDB"),
     Skill(name="Mongoose"),
-    Skill(name="HTTP"),
-    Skill(name="REST"),
     Skill(name="XML"),
     Skill(name="XSLT"),
-    Skill(name="Bash"),
+    Skill(name="JSON"),
+    Skill(name="HTTP"),
+    Skill(name="REST"),
     Skill(name="Git"),
-    Skill(name="Github"),
+    Skill(name="Bash"),
+    Skill(name="TDD"),
+    Skill(name="CI")
 ]
 
 companies = [
@@ -338,4 +340,4 @@ session.add(awards[5])
 
 session.commit()
 
-'''
+
