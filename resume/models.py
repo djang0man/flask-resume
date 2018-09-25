@@ -150,7 +150,7 @@ class Project(Base):
     
     profile_id = Column(Integer, ForeignKey('profile.id'))
 
-'''
+
 
 Base.metadata.create_all(engine)
 
@@ -166,25 +166,16 @@ skills = [
     Skill(name="React"),
     Skill(name="Redux"),
     Skill(name="AngularJS"),
-    Skill(name="jQuery"),
     Skill(name="Node.js"),
-    Skill(name="Express"),
-    Skill(name="Webpack"),
     Skill(name="Python"),
-    Skill(name="Flask"),
     Skill(name="SQL"),
     Skill(name="NoSQL"),
-    Skill(name="XML"),
-    Skill(name="XSLT"),
-    Skill(name="JSON"),
     Skill(name="HTTP"),
     Skill(name="REST"),
     Skill(name="Git"),
     Skill(name="Bash"),
-    Skill(name="Jest"),
     Skill(name="Test Driven Development"),
-    Skill(name="Continuous Integration"),
-    Skill(name="Technical Writing")
+    Skill(name="Continuous Integration")
 ]
 
 companies = [
@@ -209,26 +200,24 @@ positions = [
         description=""),
     Position(title="Supervisor of Front End Development", start_date="Apr 2012", end_date="Jul 2017", company_id="2", 
         description="<ul>"\
-            "<li>Led a team of developers in delivering award-winning websites to top hoteliers.</li> "\
-            "<li>Built responsive web applications with HTML, CSS, and JavaScript.</li> "\
-            "<li>Reviewed business documents and design compositions for project timeline feasibility.</li> "\
-            "<li>Collaborated across teams to create RESTful JSON and XML APIs for new features.</li> "\
-            "<li>Optimized responsive UI components for build efficiency, load performance, cross-platform rendering, and accessibility coverage.</li> "\
+            "<li>Led a team of developers in delivering responsive web applications to top hoteliers.</li> "\
+            "<li>Reviewed business documents and design files for engineering timeline requirements.</li> "\
+            "<li>Collaborated across teams to create RESTful APIs and custom interfaces for new features.</li> "\
+            "<li>Optimized framework components for build efficiency, website performance, cross-platform rendering, and accessibility coverage.</li> "\
           "</ul>"),
     Position(title="Front End Developer", start_date="Oct 2009", end_date="Apr 2012", company_id="2", 
         description="<ul>"\
             "<li>Succeeded under tight deadlines with multiple daily deliverables.</li> "\
-            "<li>Developed cross-browser, conversion-optimized booking solutions.</li> "\
-            "<li>Built editable email templates for hotel and airline marketing campaigns.</li> "\
+            "<li>Developed cross-browser, conversion-optimized, booking interfaces.</li> "\
             "<li>Standardized library markup for content sharing across social network APIs.</li> "\
-            "<li>Designed custom booking applications for direct reservations through Facebook.</li> "\
+            "<li>Built custom Facebook applications for direct bookings through 3rd party social media.</li> "\
           "</ul>"),
     Position(title="Web Developer and Designer", start_date="Apr 2007", end_date="Feb 2009", company_id="3", 
         description="<ul>"\
-            "<li>Built fully custom hand-coded websites for high-traffic university departments.</li> "\
-            "<li>Iterated with stakeholders to refine graphic and user interface designs.</li> "\
-            "<li>Led website management training sessions with university staff.</li>"\
-            "<li>Produced valid XHTML to meet W3C Web Content Accessibility Guidelines (WCAG) and Section 508 compliance.</li> "\
+            "<li>Built hand-coded websites for high-traffic university departments.</li> "\
+            "<li>Iterated with stakeholders to refine graphic and user interface design.</li> "\
+            "<li>Led training sessions with university staff on content management website maintainance.</li>"\
+            "<li>Validated HTML for W3C Web Content Accessibility Guidelines (WCAG) and Section 508 compliance.</li> "\
           "</ul>")
 ]
 
@@ -341,5 +330,5 @@ session.add(awards[5])
 
 session.commit()
 
-'''
+
 
