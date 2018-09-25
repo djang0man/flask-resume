@@ -198,21 +198,21 @@ institutions = [
 positions = [
     Position(title="Software Engineer", start_date="Jan 2018", is_current="true", company_id="1", 
         description=""),
-    Position(title="Supervisor of Front End Development", start_date="Apr 2012", end_date="Jul 2017", company_id="2", 
+    Position(title="Engineering Team Lead", start_date="Apr 2012", end_date="Jul 2017", company_id="2", 
         description="<ul>"\
             "<li>Led a team of developers in delivering responsive web applications to top hoteliers.</li> "\
             "<li>Reviewed business documents and design files for engineering timeline requirements.</li> "\
             "<li>Collaborated across teams to create RESTful APIs and custom interfaces for new features.</li> "\
             "<li>Optimized framework components for build efficiency, website performance, cross-platform rendering, and accessibility coverage.</li> "\
           "</ul>"),
-    Position(title="Front End Developer", start_date="Oct 2009", end_date="Apr 2012", company_id="2", 
+    Position(title="Frontend Engineer", start_date="Oct 2009", end_date="Apr 2012", company_id="2", 
         description="<ul>"\
             "<li>Succeeded under tight deadlines with multiple daily deliverables.</li> "\
             "<li>Developed cross-browser, conversion-optimized, booking interfaces.</li> "\
             "<li>Standardized library markup for content sharing across social network APIs.</li> "\
             "<li>Built custom Facebook applications for direct bookings through 3rd party social media.</li> "\
           "</ul>"),
-    Position(title="Web Developer and Designer", start_date="Apr 2007", end_date="Feb 2009", company_id="3", 
+    Position(title="Web Designer", start_date="Apr 2007", end_date="Feb 2009", company_id="3", 
         description="<ul>"\
             "<li>Built hand-coded websites for high-traffic university departments.</li> "\
             "<li>Iterated with stakeholders to refine graphic and user interface design.</li> "\
@@ -226,7 +226,6 @@ programs = [
             url="https://www.codefellows.org/courses/code-401/advanced-software-development-in-full-stack-javascript/", 
             start_date="Aug 2017", end_date="Nov 2017"),
     Program(name="IT Foundations", type="Certificate", school_id="2", 
-            url="https://www.pce.uw.edu/certificates/it-foundations", 
             start_date="Jun 2017", end_date="Dec 2017"),
     Program(name="Python Programming", school_id="2",
             url="https://www.pce.uw.edu/certificates/python-programming",
