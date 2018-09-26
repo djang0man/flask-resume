@@ -201,22 +201,22 @@ positions = [
     Position(title="Engineering Team Lead", start_date="Apr 2012", end_date="Jul 2017", company_id="2", 
         description="<ul>"\
             "<li>Led a team of developers in delivering responsive web applications to top hoteliers.</li> "\
-            "<li>Reviewed business documents and design files for engineering timeline requirements.</li> "\
-            "<li>Collaborated across teams to create RESTful APIs and custom interfaces for new features.</li> "\
-            "<li>Optimized framework components for build efficiency, website performance, cross-platform rendering, and accessibility coverage.</li> "\
+            "<li>Reviewed business documents and design files to set project timeline requirements.</li> "\
+            "<li>Collaborated across teams to create interface prototypes and RESTful APIs for new features.</li> "\
+            "<li>Optimized framework components for build efficiency, load performance, cross-platform rendering, and accessibility coverage.</li> "\
           "</ul>"),
     Position(title="Frontend Engineer", start_date="Oct 2009", end_date="Apr 2012", company_id="2", 
         description="<ul>"\
             "<li>Succeeded under tight deadlines with multiple daily deliverables.</li> "\
             "<li>Developed cross-browser, conversion-optimized, booking interfaces.</li> "\
             "<li>Standardized library markup for content sharing across social network APIs.</li> "\
-            "<li>Built custom Facebook applications for direct bookings through 3rd party social media.</li> "\
+            "<li>Built custom Facebook applications for direct hotel bookings through social media.</li> "\
           "</ul>"),
     Position(title="Web Designer", start_date="Apr 2007", end_date="Feb 2009", company_id="3", 
         description="<ul>"\
             "<li>Built hand-coded websites for high-traffic university departments.</li> "\
             "<li>Iterated with stakeholders to refine graphic and user interface design.</li> "\
-            "<li>Led training sessions with university staff on content management website maintainance.</li>"\
+            "<li>Led website maintenance and content management training sessions with university staff.</li>"\
             "<li>Validated HTML for W3C Web Content Accessibility Guidelines (WCAG) and Section 508 compliance.</li> "\
           "</ul>")
 ]
