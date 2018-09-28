@@ -200,39 +200,34 @@ positions = [
         description=""),
     Position(title="Engineering Team Lead", start_date="Apr 2012", end_date="Jul 2017", company_id="2", 
         description="<ul>"\
-            "<li>Led a team of developers in delivering responsive web applications to top hoteliers.</li> "\
-            "<li>Reviewed business documents and design files to set project timeline requirements.</li> "\
-            "<li>Collaborated across teams to create interface prototypes and RESTful APIs for new features.</li> "\
-            "<li>Optimized framework components for build efficiency, load performance, cross-platform rendering, and accessibility coverage.</li> "\
+            "<li>Led a team of developers in delivering responsive web applications to top hoteliers.</li>"\
+            "<li>Reviewed business documents and design files to set project timeline requirements.</li>"\
+            "<li>Collaborated across teams to create RESTful APIs for new features and interfaces.</li>"\
+            "<li>Optimized framework components for build efficiency, load performance, cross-platform rendering, and accessibility coverage.</li>"\
           "</ul>"),
     Position(title="Frontend Engineer", start_date="Oct 2009", end_date="Apr 2012", company_id="2", 
         description="<ul>"\
-            "<li>Succeeded under tight deadlines with multiple daily deliverables.</li> "\
-            "<li>Developed cross-browser, conversion-optimized, booking interfaces.</li> "\
-            "<li>Standardized library markup for content sharing across social network APIs.</li> "\
-            "<li>Built custom Facebook applications for direct hotel bookings through social media.</li> "\
+            "<li>Succeeded under tight deadlines with multiple daily deliverables.</li>"\
+            "<li>Developed cross-browser, conversion-optimized, booking interfaces.</li>"\
+            "<li>Standardized library markup for content sharing across social network APIs.</li>"\
+            "<li>Built custom reservation apps for direct hotel bookings through Facebook and other social media platforms.</li>"\
           "</ul>"),
     Position(title="Web Designer", start_date="Apr 2007", end_date="Feb 2009", company_id="3", 
         description="<ul>"\
-            "<li>Built hand-coded websites for high-traffic university departments.</li> "\
-            "<li>Iterated with stakeholders to refine graphic and user interface design.</li> "\
+            "<li>Built hand-coded websites for high-traffic university departments.</li>"\
+            "<li>Iterated with stakeholders to refine graphic and user interface design.</li>"\
             "<li>Led website maintenance and content management training sessions with university staff.</li>"\
-            "<li>Validated HTML for W3C Web Content Accessibility Guidelines (WCAG) and Section 508 compliance.</li> "\
+            "<li>Validated XHTML for W3C Web Content Accessibility Guidelines (WCAG) and Section 508 compliance.</li>"\
           "</ul>")
 ]
 
 programs = [
-    Program(name="Advanced Software Development", school_id="1", 
-            url="https://www.codefellows.org/courses/code-401/advanced-software-development-in-full-stack-javascript/", 
-            start_date="Aug 2017", end_date="Nov 2017"),
-    Program(name="IT Foundations", type="Certificate", school_id="2", 
-            start_date="Jun 2017", end_date="Dec 2017"),
-    Program(name="Python Programming", school_id="2",
-            url="https://www.pce.uw.edu/certificates/python-programming",
-            start_date="Jan 2018", is_current="true"),
-    Program(name="English", type="BA", school_id="3", 
-            url="https://english.uiowa.edu/", 
-            start_date="2005", end_date="2008")
+    Program(name="Advanced Software Development", school_id="1", start_date="Aug 2017", end_date="Nov 2017",
+            url="https://www.codefellows.org/courses/code-401/advanced-software-development-in-full-stack-javascript/"),
+    Program(name="IT Foundations", type="Certificate", school_id="2", start_date="Jun 2017", end_date="Dec 2017"),
+    Program(name="Python Programming", school_id="2", start_date="Jan 2018", is_current="true", 
+            url="https://www.pce.uw.edu/certificates/python-programming"),
+    Program(name="English", type="BA", school_id="3", start_date="2005", end_date="2008", url="https://english.uiowa.edu/") 
 ]
 
 courses = [
