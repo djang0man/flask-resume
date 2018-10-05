@@ -224,7 +224,8 @@ positions = [
 programs = [
     Program(name="Advanced Software Development", school_id="1", start_date="Aug 2017", end_date="Nov 2017",
             url="https://www.codefellows.org/courses/code-401/advanced-software-development-in-full-stack-javascript/"),
-    Program(name="IT Foundations", type="Certificate", school_id="2", start_date="Jun 2017", end_date="Dec 2017"),
+    Program(name="IT Foundations", type="Certificate", school_id="2", start_date="Jun 2017", end_date="Dec 2017", 
+            url="https://www.pce.uw.edu/certificates/"),
     Program(name="Python Programming", school_id="2", start_date="Jan 2018", is_current="true", 
             url="https://www.pce.uw.edu/certificates/python-programming"),
     Program(name="English", type="BA", school_id="3", start_date="2005", end_date="2008", url="https://english.uiowa.edu/") 
