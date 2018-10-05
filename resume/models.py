@@ -150,7 +150,7 @@ class Project(Base):
     
     profile_id = Column(Integer, ForeignKey('profile.id'))
 
-'''
+
 
 Base.metadata.create_all(engine)
 
@@ -228,7 +228,7 @@ programs = [
             url="https://www.pce.uw.edu/certificates/"),
     Program(name="Python Programming", school_id="2", start_date="Jan 2018", is_current="true", 
             url="https://www.pce.uw.edu/certificates/python-programming"),
-    Program(name="English", type="BA", school_id="3", start_date="2005", end_date="2008", url="https://english.uiowa.edu/") 
+    Program(name="English", type="BA", school_id="3", start_date="2004", end_date="2008", url="https://english.uiowa.edu/") 
 ]
 
 courses = [
@@ -324,5 +324,3 @@ session.add(awards[4])
 session.add(awards[5])
 
 session.commit()
-
-'''
