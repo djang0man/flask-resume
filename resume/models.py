@@ -150,7 +150,7 @@ class Project(Base):
     
     profile_id = Column(Integer, ForeignKey('profile.id'))
 
-'''
+
 
 Base.metadata.create_all(engine)
 
@@ -198,7 +198,7 @@ institutions = [
 positions = [
     Position(title="Software Engineer", start_date="Jan 2018", is_current="true", company_id="1", 
         description="<ul>"\
-            "<li>Implements new features and enhancements to core product services, interfaces, and APIs.</li>"\
+            "<li>Implements new features and enhancements to core product, services, interfaces, and APIs.</li>"\
             "<li>Leverages leading-edge web APIs and protocols including Service Workers, Push, Notifications, and WebSockets.</li>"\
           "</ul>"),
     Position(title="Engineering Team Lead", start_date="Apr 2012", end_date="Jul 2017", company_id="2", 
@@ -328,4 +328,4 @@ session.add(awards[5])
 
 session.commit()
 
-'''
+
