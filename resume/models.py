@@ -1,36 +1,37 @@
-from sqlalchemy import Table, Column, Integer, String, Sequence, ForeignKey, Text, Boolean
+from sqlalchemy import Table, Column, Integer, String, ForeignKey, Text, Boolean
 from sqlalchemy.orm import relationship
 
 from .database import Base, engine, session
 
-skills_relationship = Table('relationship_skills', Base.metadata,
-    Column('skill_id', Integer, ForeignKey('skill.id')),
-    Column('profile_id', Integer, ForeignKey('profile.id'))
-)
+skills_relationship = \
+    Table('relationship_skills', Base.metadata,
+          Column('skill_id', Integer, ForeignKey('skill.id')),
+          Column('profile_id', Integer, ForeignKey('profile.id')))
 
-companies_relationship = Table('relationship_companies', Base.metadata,
-    Column('company_id', Integer, ForeignKey('company.id')),
-    Column('profile_id', Integer, ForeignKey('profile.id'))
-)
+companies_relationship = \
+    Table('relationship_companies', Base.metadata,
+          Column('company_id', Integer, ForeignKey('company.id')),
+          Column('profile_id', Integer, ForeignKey('profile.id')))
 
-schools_relationship = Table('relationship_schools', Base.metadata,
-    Column('school_id', Integer, ForeignKey('school.id')),
-    Column('profile_id', Integer, ForeignKey('profile.id'))
-)
+schools_relationship = \
+    Table('relationship_schools', Base.metadata,
+          Column('school_id', Integer, ForeignKey('school.id')),
+          Column('profile_id', Integer, ForeignKey('profile.id')))
 
-institutions_relationship = Table('relationship_institutions', Base.metadata,
-    Column('institution_id', Integer, ForeignKey('institution.id')),
-    Column('profile_id', Integer, ForeignKey('profile.id'))
-)
+institutions_relationship = \
+    Table('relationship_institutions', Base.metadata,
+          Column('institution_id', Integer, ForeignKey('institution.id')),
+          Column('profile_id', Integer, ForeignKey('profile.id')))
 
-entries_relationship = Table('relationship_entries', Base.metadata,
-    Column('entry_id', Integer, ForeignKey('entry.id')),
-    Column('award_id', Integer, ForeignKey('award.id'))
-)
+entries_relationship = \
+    Table('relationship_entries', Base.metadata,
+          Column('entry_id', Integer, ForeignKey('entry.id')),
+          Column('award_id', Integer, ForeignKey('award.id')))
+
 
 class Profile(Base):
     __tablename__ = "profile"
-    
+
     id = Column(Integer, primary_key=True)
     name = Column(String(64))
     stack_overflow = Column(String(128), unique=True)
@@ -40,67 +41,63 @@ class Profile(Base):
     username = Column(String(64), unique=True)
     location = Column(String(128))
     about = Column(Text())
-    
+
     skills = relationship("Skill", secondary=skills_relationship, backref="profile")
     companies = relationship("Company", secondary=companies_relationship, backref="profile")
     schools = relationship("School", secondary=schools_relationship, backref="profile")
     institutions = relationship("Institution", secondary=institutions_relationship, backref="profile")
     projects = relationship("Project")
 
+
 class Skill(Base):
     __tablename__ = "skill"
     # many to many (Profile)
-    
     id = Column(Integer, primary_key=True)
     name = Column(String(64), unique=True)
+
 
 class Company(Base):
     __tablename__ = "company"
     # many to many (Profile)
-
     id = Column(Integer, primary_key=True)
     name = Column(String(128))
     url = Column(String(256))
-    
     positions = relationship("Position")
+
 
 class School(Base):
     __tablename__ = "school"
     # many to many (Profile)
-    
     id = Column(Integer, primary_key=True)
     name = Column(String(128))
     url = Column(String(256))
-    
     programs = relationship("Program")
+
 
 class Institution(Base):
     __tablename__ = "institution"
     # many to many (Profile)
-    
     id = Column(Integer, primary_key=True)
     name = Column(String(128))
     url = Column(String(256))
-    
     awards = relationship("Award")
-    
+
+
 class Position(Base):
     __tablename__ = "position"
     # one to many (Company)
-    
     id = Column(Integer, primary_key=True)
     title = Column(String(128))
     start_date = Column(String(64))
     end_date = Column(String(64), nullable="True")
     is_current = Column(Boolean(), default=False)
     description = Column(Text(), nullable="True")
-    
     company_id = Column(Integer, ForeignKey('company.id'))
-    
+
+
 class Program(Base):
     __tablename__ = "program"
     # one to many (School)
-    
     id = Column(Integer, primary_key=True)
     type = Column(String(64), nullable="True")
     name = Column(String(128))
@@ -108,55 +105,52 @@ class Program(Base):
     start_date = Column(String(64))
     end_date = Column(String(64), nullable="True")
     is_current = Column(Boolean(), default=False)
-    
     school_id = Column(Integer, ForeignKey('school.id'))
     courses = relationship("Course")
+
 
 class Course(Base):
     __tablename__ = "course"
     # one to many (Program)
-    
     id = Column(Integer, primary_key=True)
     name = Column(String(128))
     url = Column(String(256))
-    
     program_id = Column(Integer, ForeignKey('program.id'))
+
 
 class Award(Base):
     __tablename__ = "award"
     # one to many (Institution)
-    
     id = Column(Integer, primary_key=True)
     name = Column(String(128))
-    
     institution_id = Column(Integer, ForeignKey('institution.id'))
     entries = relationship("Entry", secondary=entries_relationship, backref="award")
-    
+
+
 class Entry(Base):
     __tablename__ = "entry"
     # many to many (Award)
-    
     id = Column(Integer, primary_key=True)
     name = Column(String(128))
     url = Column(String(256))
-    
+
+
 class Project(Base):
     __tablename__ = "project"
     # one to many (Profile)
-    
     id = Column(Integer, primary_key=True)
     name = Column(String(128))
     url = Column(String(256))
-    
     profile_id = Column(Integer, ForeignKey('profile.id'))
+
 
 '''
 
 Base.metadata.create_all(engine)
 
-stuart = Profile(name="Stuart Kershaw", stack_overflow="https://stackoverflow.com/users/2332112/stuart-kershaw", 
-	    github="https://github.com/stuartkershaw", linkedin="https://www.linkedin.com/in/stuartkershaw", 
-            email="stuartdkershaw@gmail.com", username="stuartdkershaw", location="Seattle, WA", 
+stuart = Profile(name="Stuart Kershaw", stack_overflow="https://stackoverflow.com/users/2332112/stuart-kershaw",
+	    github="https://github.com/stuartkershaw", linkedin="https://www.linkedin.com/in/stuartkershaw",
+            email="stuartdkershaw@gmail.com", username="stuartdkershaw", location="Seattle, WA",
             about="JavaScript and Python")
 
 skills = [
@@ -172,10 +166,9 @@ skills = [
     Skill(name="NoSQL"),
     Skill(name="HTTP"),
     Skill(name="REST"),
+    Skill(name="TCP/IP"),
     Skill(name="Git"),
-    Skill(name="Bash"),
-    Skill(name="Test Driven Development"),
-    Skill(name="Continuous Integration")
+    Skill(name="Bash")
 ]
 
 companies = [
@@ -196,26 +189,26 @@ institutions = [
 ]
 
 positions = [
-    Position(title="Software Engineer", start_date="Jan 2018", is_current="true", company_id="1", 
+    Position(title="Software Engineer", start_date="Jan 2018", is_current="true", company_id="1",
         description="<ul>"\
             "<li>Implements new features and enhancements to core product, services, interfaces, and APIs.</li>"\
             "<li>Leverages leading-edge web APIs and protocols including Service Workers, Push, Notifications, and WebSockets.</li>"\
           "</ul>"),
-    Position(title="Engineering Team Lead", start_date="Apr 2012", end_date="Jul 2017", company_id="2", 
+    Position(title="Engineering Team Lead", start_date="Apr 2012", end_date="Jul 2017", company_id="2",
         description="<ul>"\
             "<li>Led a team of developers in delivering responsive web applications to top hoteliers.</li>"\
             "<li>Reviewed business documents and design files to set project timeline requirements.</li>"\
             "<li>Collaborated across teams to create RESTful APIs for new features and interfaces.</li>"\
             "<li>Optimized framework components for build efficiency, load performance, cross-platform rendering, and accessibility coverage.</li>"\
           "</ul>"),
-    Position(title="Frontend Engineer", start_date="Oct 2009", end_date="Apr 2012", company_id="2", 
+    Position(title="Frontend Engineer", start_date="Oct 2009", end_date="Apr 2012", company_id="2",
         description="<ul>"\
             "<li>Succeeded under tight deadlines with multiple daily deliverables.</li>"\
             "<li>Developed cross-browser, conversion-optimized, booking interfaces.</li>"\
             "<li>Standardized library markup for content sharing across social network APIs.</li>"\
             "<li>Built custom reservation apps for direct hotel bookings through Facebook and other social media platforms.</li>"\
           "</ul>"),
-    Position(title="Web Designer", start_date="Apr 2007", end_date="Feb 2009", company_id="3", 
+    Position(title="Web Designer", start_date="Apr 2007", end_date="Jan 2009", company_id="3",
         description="<ul>"\
             "<li>Built hand-coded websites for high-traffic university departments.</li>"\
             "<li>Iterated with stakeholders to refine graphic and user interface design.</li>"\
@@ -227,29 +220,29 @@ positions = [
 programs = [
     Program(name="Advanced Software Development", school_id="1", start_date="Aug 2017", end_date="Nov 2017",
             url="https://www.codefellows.org/courses/code-401/advanced-software-development-in-full-stack-javascript/"),
-    Program(name="IT Foundations", type="Certificate", school_id="2", start_date="Jun 2017", end_date="Dec 2017", 
+    Program(name="IT Foundations", type="Certificate", school_id="2", start_date="Jun 2017", end_date="Dec 2017",
             url="https://www.pce.uw.edu/certificates/"),
-    Program(name="Python Programming", school_id="2", start_date="Jan 2018", is_current="true", 
+    Program(name="Python Programming", school_id="2", start_date="Jan 2018", is_current="true",
             url="https://www.pce.uw.edu/certificates/python-programming"),
-    Program(name="English", type="BA", school_id="3", start_date="2004", end_date="2008", url="https://english.uiowa.edu/") 
+    Program(name="English", type="BA", school_id="3", start_date="2004", end_date="2008", url="https://english.uiowa.edu/")
 ]
 
 courses = [
-    Course(name="Code 301: Intermediate Software Development", program_id="1", 
+    Course(name="Code 301: Intermediate Software Development", program_id="1",
            url="https://www.codefellows.org/courses/code-301/intermediate-software-development/"),
-    Course(name="Code 401: Advanced Software Development in Full-Stack JavaScript", program_id="1", 
+    Course(name="Code 401: Advanced Software Development in Full-Stack JavaScript", program_id="1",
            url="https://www.codefellows.org/courses/code-401/advanced-software-development-in-full-stack-javascript/"),
-    Course(name="Algorithms & Data Structures", program_id="2", 
+    Course(name="Algorithms & Data Structures", program_id="2",
            url="https://www.pce.uw.edu/courses/foundations-of-algorithms-and-data-structures"),
-    Course(name="Programming Foundations (Python)", program_id="2", 
+    Course(name="Programming Foundations (Python)", program_id="2",
            url="https://www.pce.uw.edu/courses/foundations-of-programming-python"),
-    Course(name="Database Management", program_id="2", 
+    Course(name="Database Management", program_id="2",
            url="https://www.pce.uw.edu/courses/foundations-of-database-management"),
-    Course(name="Programming in Python", program_id="3", 
+    Course(name="Programming in Python", program_id="3",
            url="https://www.pce.uw.edu/courses/programming-in-python"),
-    Course(name="Advanced Programming in Python", program_id="3", 
+    Course(name="Advanced Programming in Python", program_id="3",
            url="https://www.pce.uw.edu/courses/advanced-programming-in-python"),
-    Course(name="Internet Programming with Python", program_id="3", 
+    Course(name="Internet Programming with Python", program_id="3",
            url="https://www.pce.uw.edu/courses/internet-programming-with-python")
 ]
 
@@ -274,27 +267,27 @@ awards = [
 ]
 
 entries= [
-    Entry(name="Ojai Valley Inn & Spa", 
+    Entry(name="Ojai Valley Inn & Spa",
           url="http://interactivemediaawards.com/winners/certificate.asp?param=764449&cat=1"),
-    Entry(name="Palau Pacific Resort", 
+    Entry(name="Palau Pacific Resort",
           url="http://interactivemediaawards.com/winners/certificate.asp?param=764435&cat=1"),
-    Entry(name="Prince Resorts Hawaii", 
+    Entry(name="Prince Resorts Hawaii",
           url="http://interactivemediaawards.com/winners/certificate.asp?param=764456&cat=1"),
-    Entry(name="Elegant Hotels", 
+    Entry(name="Elegant Hotels",
           url="http://interactivemediaawards.com/winners/certificate.asp?param=764687&cat=1"),
-    Entry(name="Hotel Metropole", 
+    Entry(name="Hotel Metropole",
           url="http://interactivemediaawards.com/winners/certificate.asp?param=764764&cat=1"),
-    Entry(name="Wyndham Grand Pittsburgh Downtown", 
+    Entry(name="Wyndham Grand Pittsburgh Downtown",
           url="http://interactivemediaawards.com/winners/certificate.asp?param=764603&cat=1"),
-    Entry(name="Chanalai Hotels and Resorts", 
+    Entry(name="Chanalai Hotels and Resorts",
           url="http://interactivemediaawards.com/winners/certificate.asp?param=606235&cat=1"),
-    Entry(name="Palau Pacific Resort", 
+    Entry(name="Palau Pacific Resort",
           url="http://www.webaward.org/winner/33385/sabre-hospitality-solutions-wins-2017-webaward-for-prince-resorts-hawaii.html"),
-    Entry(name="Elegant Hotels", 
+    Entry(name="Elegant Hotels",
           url="http://www.webaward.org/winner/33384/sabre-hospitality-solutions-wins-2017-webaward-for-elegant-hotels.html"),
-    Entry(name="Palau Pacific Resort", 
+    Entry(name="Palau Pacific Resort",
           url="http://www.webaward.org/winner/32731/sabre-hospitality-solutions-wins-2016-webaward-for-palau-pacific-resort.html"),
-    Entry(name="Chanalai Hotels and Resorts", 
+    Entry(name="Chanalai Hotels and Resorts",
           url="http://www.webaward.org/winner/32730/sabre-hospitality-solutions-wins-2016-webaward-for-chanalai-hotels-and-resorts.html")
 ]
 
