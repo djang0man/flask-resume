@@ -148,10 +148,12 @@ class Project(Base):
 
 Base.metadata.create_all(engine)
 
-stuart = Profile(name="Stuart Kershaw", stack_overflow="https://stackoverflow.com/users/2332112/stuart-kershaw",
-	    github="https://github.com/stuartkershaw", linkedin="https://www.linkedin.com/in/stuartkershaw",
-            email="stuartdkershaw@gmail.com", username="stuartdkershaw", location="Seattle, WA",
-            about="JavaScript and Python")
+stuart = Profile(name="Stuart Kershaw",
+                 stack_overflow="https://stackoverflow.com/users/2332112/stuart-kershaw",
+                 github="https://github.com/stuartkershaw",
+                 linkedin="https://www.linkedin.com/in/stuartkershaw",
+                 email="stuartdkershaw@gmail.com", username="stuartdkershaw",
+                 location="Seattle, WA", about="JavaScript and Python")
 
 skills = [
     Skill(name="HTML"),
@@ -193,8 +195,8 @@ positions = [
         description="<ul>"\
             "<li>Implements new features and enhancements to core product, services, interfaces, and APIs.</li>"\
             "<li>Leverages leading-edge web APIs and protocols including Service Workers, Push, Notifications, and WebSockets.</li>"\
-            "<li>Monitors application and infrastructure performance with New Relic for response time and product availability optimizations.</li>"\
-            "<li>Owns development to delivery of Knock Rentals community pages: highly visible, fully responsive, property landing pages featuring real-time unit availability, tour scheduling, and property information./li>"\
+            "<li>Monitors application and infrastructure performance with New Relic to detect bottlenecks and improve platform availability and response time.</li>"\
+            "<li>Owns development to deploy of Knock Rentals community pages: fully responsive, server-side rendered, community landing pages featuring real-time unit availability, tour scheduling, and property information.</li>"\
           "</ul>"),
     Position(title="Supervisor of Frontend Engineering", start_date="Apr 2012", end_date="Jul 2017", company_id="2",
         description="<ul>"\
@@ -249,6 +251,7 @@ courses = [
 ]
 
 projects = [
+    Project(name="Knock Rentals Community Pages", url="https://knockrentals.com/community/49Nyo2YA3eNxM60n/apartment/rental/seattle"),
     Project(name="Mandarin Oriental", url="https://www.mandarinoriental.com/"),
     Project(name="Chanalai Hotels & Resorts", url="https://www.chanalai.com/en"),
     Project(name="Elegant Hotels", url="https://www.eleganthotels.com/"),
