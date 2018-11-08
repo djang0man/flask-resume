@@ -195,8 +195,8 @@ positions = [
         description="<ul>"\
             "<li>Implements new features and enhancements to core product, services, interfaces, and APIs.</li>"\
             "<li>Leverages leading-edge web APIs and protocols including Service Workers, Push, Notifications, and WebSockets.</li>"\
-            "<li>Monitors application and infrastructure performance with New Relic to detect bottlenecks and improve platform availability and response time.</li>"\
-            "<li>Owns development to deploy of Knock Rentals community pages: fully responsive, server-side rendered, community landing pages featuring real-time unit availability, tour scheduling, and property information.</li>"\
+            "<li>Measures application and infrastructure performance with New Relic to improve platform availability and response time.</li>"\
+            "<li>Owns build to release of Knock Rentals community pages: fully responsive, server-side rendered, community landing pages featuring real-time availability, tour scheduling, and property information.</li>"\
           "</ul>"),
     Position(title="Supervisor of Frontend Engineering", start_date="Apr 2012", end_date="Jul 2017", company_id="2",
         description="<ul>"\
