@@ -21,10 +21,3 @@ To populate the database on first launch, uncomment the example data in `resume/
 ```
 python run.py
 ```
-
-## Live
-
-* http://stuartkershaw.com
-* http://stuartkershaw.com/jinja2
-* http://stuartkershaw.com/handlebars
-* http://stuartkershaw.com/api/stuartdkershaw
