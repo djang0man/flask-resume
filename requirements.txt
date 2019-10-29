@@ -8,4 +8,4 @@ jsonschema==2.6.0
 MarkupSafe==1.0
 psycopg2==2.7.3.2
 SQLAlchemy==1.1.15
-Werkzeug==0.12.2
+Werkzeug==0.15.3
